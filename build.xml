@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="drupal8project" default="clear" basedir="." description="Build drupal 8 app">
+
+  <!--  Global properties -->
+  <property name="commit" value="puch configuration" override="true"/>
+
+  <!--  Rebuild the cache-->
+  <target name="clear" description="Rebuild the cache">
+    <echo msg='Rebuild the cache'/>
+    <exec command="vendor\bin\drush cr" description="Rebuild the cache." logoutput="true"/>
+  </target>
+
+  <!--  pull-->
+  <target name="pull" depends="clear">
+    <phingcall target="export"/>
+    <exec command="git add --all" description="git add --all" logoutput="true"/>
+    <exec command='git commit -m "Export drupal configuration"' description='git commit -m "${commit}"' logoutput="true"/>
+    <exec command="git pull origin master" description="Fetch data from cvs repository." logoutput="true"/>
+    <exec command="composer install --no-interaction" description="Install missing composer packages." logoutput="true"/>
+    <exec command="vendor\bin\drush -y config-import" description="Import drupal configuration." logoutput="true"/>
+    <exec command="vendor\bin\drush -y updb" description="Run drupal update database hooks." logoutput="true"/>
+    <exec command="vendor\bin\drush -y entup" description="Run drupal entity update hooks." logoutput="true"/>
+    <phingcall target="clear"/>
+  </target>
+
+  <!--  push -->
+  <target name="push" depends="clear">
+    <!--vendor\bin\phing  -D commit="backup and export configs" push-->
+    <phingcall target="export"/>
+    <exec command="git add --all" description="git add --all" logoutput="true"/>
+    <exec command='git commit -m "${commit}"' description='git commit -m "${commit}"' logoutput="true"/>
+    <exec command="git push -u origin master" description="git push" logoutput="true"/>
+  </target>
+
+  <!--  Export drupal configuration-->
+  <target name="export">
+    <exec command="vendor\bin\drush -y config-export" description="Export drupal configuration." logoutput="true"/>
+  </target>
+
+</project>
