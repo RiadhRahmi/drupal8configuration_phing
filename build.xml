@@ -25,7 +25,7 @@
 
   <!--  push -->
   <target name="push" depends="clear">
-    <!--vendor\bin\phing  -D commit="backup and export configs" push-->
+    <!-- vendor\bin\phing push -D commit="backup and export configs" -->
     <phingcall target="export"/>
     <exec command="git add --all" description="git add --all" logoutput="true"/>
     <exec command='git commit -m "${commit}"' description='git commit -m "${commit}"' logoutput="true"/>
