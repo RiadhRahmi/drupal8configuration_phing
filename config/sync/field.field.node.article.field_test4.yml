@@ -1,0 +1,19 @@
+uuid: 5e04c5cf-e159-44ed-af95-e805d674d534
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_test4
+    - node.type.article
+id: node.article.field_test4
+field_name: field_test4
+entity_type: node
+bundle: article
+label: test4
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
