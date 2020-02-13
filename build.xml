@@ -19,7 +19,7 @@
     <exec command="composer install --no-interaction" description="Install missing composer packages." logoutput="true"/>
     <exec command="vendor\bin\drush -y config-import" description="Import drupal configuration." logoutput="true"/>
     <exec command="vendor\bin\drush -y updb" description="Run drupal update database hooks." logoutput="true"/>
-    <exec command="vendor\bin\drush -y entup" description="Run drupal entity update hooks." logoutput="true"/>
+    <exec command="vendor\bin\drush updatedb --entity-updates" description="Run drupal entity update hooks." logoutput="true"/>
     <phingcall target="clear"/>
   </target>
 
