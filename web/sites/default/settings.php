@@ -520,7 +520,7 @@ if ($settings['hash_salt']) {
  * See https://www.drupal.org/documentation/modules/file for more information
  * about securing private files.
  */
- $settings['file_private_path'] = 'private';
+ $settings['file_private_path'] = '../private';
 
 /**
  * Temporary file path:
@@ -706,7 +706,10 @@ $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
  * will allow the site to run off of all variants of example.com and
  * example.org, with all subdomains included.
  */
-
+// $settings['trusted_host_patterns'] = [
+////    '^www\.example\.com$',
+//    '^dev\.drupal8configuration\.com$',
+//  ];
 /**
  * The default list of directories that will be ignored by Drupal's file API.
  *
@@ -760,7 +763,7 @@ $databases['default']['default'] = array (
   'username' => 'drupal8conf_db',
   'password' => 'drupal8conf_db',
   'prefix' => '',
-  'host' => 'vps363068.ovh.net',
+  'host' => 'localhost',
   'port' => '3306',
   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
   'driver' => 'mysql',
