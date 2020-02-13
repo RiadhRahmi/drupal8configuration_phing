@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.article.field_author
     - field.field.node.article.field_image
     - field.field.node.article.field_tags
+    - field.field.node.article.field_test
     - image.style.thumbnail
     - node.type.article
   module:
@@ -70,6 +71,14 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_test:
+    weight: 122
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   path:
     type: path
     weight: 30
