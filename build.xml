@@ -12,7 +12,7 @@
 
   <!--  pull-->
   <target name="pull" depends="clear">
-    <exec command="git add --all" description="git add --all" logoutput="true"/>
+    <exec command="git add ." description="git add --all" logoutput="true"/>
     <exec command='git commit -m "Import drupal configuration"' description='git commit -m "${commit}"' logoutput="true"/>
     <exec command="git pull" description="Fetch data from cvs repository." logoutput="true"/>
     <exec command="composer install --no-interaction" description="Install missing composer packages." logoutput="true"/>
