@@ -24,8 +24,8 @@
   </target>
 
   <!--  push -->
+  <!-- vendor\bin\phing push -D commit="backup and export configs" -->
   <target name="push" depends="clear">
-    <!-- vendor\bin\phing push -D commit="backup and export configs" -->
     <exec command="vendor\bin\drush -y config-export" description="Export drupal configuration." logoutput="true"/>
     <exec command="git add --all" description="git add --all" logoutput="true"/>
     <exec command='git commit -m "${commit}"' description='git commit -m "${commit}"' logoutput="true"/>
