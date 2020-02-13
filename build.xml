@@ -12,13 +12,13 @@
 
   <!--  pull-->
   <target name="pull" depends="clear">
+    <exec command="vendor\bin\drush -y config-export" description="Export drupal configuration." logoutput="true"/>
     <exec command="git add ." description="git add --all" logoutput="true"/>
     <exec command='git commit -m "Import drupal configuration"' description='git commit -m "${commit}"' logoutput="true"/>
     <exec command="git pull" description="Fetch data from cvs repository." logoutput="true"/>
     <exec command="composer install --no-interaction" description="Install missing composer packages." logoutput="true"/>
-    <exec command="vendor\bin\drush config-export" description="Export drupal configuration." logoutput="true"/>
     <exec command="vendor\bin\drush config-import" description="Import drupal configuration." logoutput="true"/>
-    <exec command="vendor\bin\drush updb" description="Run drupal update database hooks." logoutput="true"/>
+    <exec command="vendor\bin\drush -y updb" description="Run drupal update database hooks." logoutput="true"/>
     <exec command="vendor\bin\drush updatedb --entity-updates" description="Run drupal entity update hooks." logoutput="true"/>
     <phingcall target="clear"/>
   </target>
