@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.article.field_image
     - field.field.node.article.field_tags
     - field.field.node.article.field_test
+    - field.field.node.article.field_test2
     - image.style.thumbnail
     - node.type.article
   module:
@@ -73,6 +74,14 @@ content:
     third_party_settings: {  }
   field_test:
     weight: 122
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_test2:
+    weight: 123
     settings:
       size: 60
       placeholder: ''
