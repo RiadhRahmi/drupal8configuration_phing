@@ -6,15 +6,14 @@ dependencies:
     - field.field.node.article.body
     - field.field.node.article.comment
     - field.field.node.article.field_author
-    - field.field.node.article.field_date
     - field.field.node.article.field_image
     - field.field.node.article.field_tags
     - field.field.node.article.field_test
+    - field.field.node.article.field_test2
     - image.style.thumbnail
     - node.type.article
   module:
     - comment
-    - datetime
     - image
     - path
     - text
@@ -55,12 +54,6 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
-  field_date:
-    weight: 123
-    settings: {  }
-    third_party_settings: {  }
-    type: datetime_default
-    region: content
   field_image:
     type: image_image
     weight: 4
@@ -81,6 +74,14 @@ content:
     third_party_settings: {  }
   field_test:
     weight: 122
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_test2:
+    weight: 123
     settings:
       size: 60
       placeholder: ''
