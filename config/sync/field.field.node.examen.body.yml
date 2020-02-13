@@ -1,0 +1,23 @@
+uuid: b0c64b36-66a4-45b9-9006-efc58d80eaa2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.examen
+  module:
+    - text
+id: node.examen.body
+field_name: body
+entity_type: node
+bundle: examen
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

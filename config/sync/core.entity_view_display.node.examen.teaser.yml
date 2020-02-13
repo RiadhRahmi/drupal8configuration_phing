@@ -1,0 +1,32 @@
+uuid: 90210533-abbe-45dd-a3f7-f36487dcf10c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.examen.body
+    - field.field.node.examen.field_titre
+    - node.type.examen
+  module:
+    - text
+    - user
+id: node.examen.teaser
+targetEntityType: node
+bundle: examen
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_titre: true

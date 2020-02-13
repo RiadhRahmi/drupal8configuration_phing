@@ -1,0 +1,18 @@
+uuid: 5ead1f63-2e42-47b1-b845-a5454a845731
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: examen
+type: examen
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true
