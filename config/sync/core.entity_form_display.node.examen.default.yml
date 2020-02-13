@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.examen.body
+    - field.field.node.examen.field_note
     - field.field.node.examen.field_titre
     - node.type.examen
   module:
@@ -30,6 +31,14 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_note:
+    weight: 123
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_titre:
     weight: 122
     settings:

@@ -1,0 +1,19 @@
+uuid: ff17c377-d32d-4656-b023-ba85192753c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_note
+    - node.type.examen
+id: node.examen.field_note
+field_name: field_note
+entity_type: node
+bundle: examen
+label: Note
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
