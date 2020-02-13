@@ -5,14 +5,13 @@ dependencies:
   config:
     - field.field.node.article.body
     - field.field.node.article.comment
-    - field.field.node.article.field_created_at
+    - field.field.node.article.field_author
     - field.field.node.article.field_image
     - field.field.node.article.field_tags
     - image.style.thumbnail
     - node.type.article
   module:
     - comment
-    - datetime
     - image
     - path
     - text
@@ -45,11 +44,13 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_created_at:
+  field_author:
     weight: 121
-    settings: {  }
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: datetime_default
+    type: string_textfield
     region: content
   field_image:
     type: image_image

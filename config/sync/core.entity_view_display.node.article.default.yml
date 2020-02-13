@@ -6,14 +6,13 @@ dependencies:
     - core.entity_view_display.comment.comment.default
     - field.field.node.article.body
     - field.field.node.article.comment
-    - field.field.node.article.field_created_at
+    - field.field.node.article.field_author
     - field.field.node.article.field_image
     - field.field.node.article.field_tags
     - image.style.large
     - node.type.article
   module:
     - comment
-    - datetime
     - image
     - text
     - user
@@ -40,14 +39,13 @@ content:
       view_mode: default
       pager_id: 0
     third_party_settings: {  }
-  field_created_at:
+  field_author:
     weight: 111
     label: above
     settings:
-      format_type: medium
-      timezone_override: ''
+      link_to_entity: false
     third_party_settings: {  }
-    type: datetime_default
+    type: string
     region: content
   field_image:
     type: image
