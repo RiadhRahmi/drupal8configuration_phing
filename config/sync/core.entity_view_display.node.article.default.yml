@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.article.field_tags
     - field.field.node.article.field_test
     - field.field.node.article.field_test2
+    - field.field.node.article.field_teste3
     - image.style.large
     - node.type.article
   module:
@@ -76,6 +77,14 @@ content:
     region: content
   field_test2:
     weight: 113
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_teste3:
+    weight: 114
     label: above
     settings:
       link_to_entity: false
