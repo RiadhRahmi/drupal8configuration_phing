@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.article.body
     - field.field.node.article.comment
     - field.field.node.article.field_author
-    - field.field.node.article.field_date
     - field.field.node.article.field_image
     - field.field.node.article.field_tags
     - field.field.node.article.field_test
@@ -15,7 +14,6 @@ dependencies:
     - node.type.article
   module:
     - comment
-    - datetime
     - image
     - text
     - user
@@ -49,15 +47,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
-  field_date:
-    weight: 113
-    label: above
-    settings:
-      format_type: medium
-      timezone_override: ''
-    third_party_settings: {  }
-    type: datetime_default
     region: content
   field_image:
     type: image
