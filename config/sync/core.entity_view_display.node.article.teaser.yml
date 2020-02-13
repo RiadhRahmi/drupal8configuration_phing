@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.article.field_tags
     - field.field.node.article.field_test
     - field.field.node.article.field_test2
+    - field.field.node.article.field_test4
     - field.field.node.article.field_teste3
     - field.field.node.article.field_teste5
     - image.style.medium
@@ -61,5 +62,6 @@ hidden:
   field_tags: true
   field_test: true
   field_test2: true
+  field_test4: true
   field_teste3: true
   field_teste5: true
