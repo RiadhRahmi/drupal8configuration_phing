@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.article.body
     - field.field.node.article.comment
     - field.field.node.article.field_author
+    - field.field.node.article.field_date
     - field.field.node.article.field_image
     - field.field.node.article.field_tags
     - field.field.node.article.field_test
@@ -13,6 +14,7 @@ dependencies:
     - node.type.article
   module:
     - comment
+    - datetime
     - image
     - path
     - text
@@ -52,6 +54,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_date:
+    weight: 123
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
     region: content
   field_image:
     type: image_image
