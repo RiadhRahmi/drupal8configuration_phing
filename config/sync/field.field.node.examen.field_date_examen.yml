@@ -1,0 +1,21 @@
+uuid: 72135082-2e74-43bf-aac0-1dac8957bc70
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date_examen
+    - node.type.examen
+  module:
+    - datetime
+id: node.examen.field_date_examen
+field_name: field_date_examen
+entity_type: node
+bundle: examen
+label: 'Date examen'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

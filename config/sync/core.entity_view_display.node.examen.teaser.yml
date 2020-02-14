@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.examen.body
+    - field.field.node.examen.field_date_examen
     - field.field.node.examen.field_note
     - field.field.node.examen.field_titre
     - node.type.examen
@@ -30,5 +31,6 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_date_examen: true
   field_note: true
   field_titre: true

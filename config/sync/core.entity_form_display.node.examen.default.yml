@@ -4,10 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.node.examen.body
+    - field.field.node.examen.field_date_examen
     - field.field.node.examen.field_note
     - field.field.node.examen.field_titre
     - node.type.examen
   module:
+    - datetime
     - path
     - text
 id: node.examen.default
@@ -31,6 +33,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_date_examen:
+    weight: 124
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
   field_note:
     weight: 123
     settings:
