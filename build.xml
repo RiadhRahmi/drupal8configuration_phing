@@ -28,7 +28,6 @@
     <exec command='git commit -m "Import drupal configuration"' description='git commit -m "${commit}"' logoutput="true"/>
     <exec command="git pull" description="Fetch data from cvs repository." logoutput="true"/>
     <exec command="composer install --no-interaction" description="Install missing composer packages." logoutput="true"/>
-    <!--  restore database -->
     <phingcall target="restore"/>
     <exec command="vendor\bin\drush -y config-import" description="Import drupal configuration." logoutput="true"/>
     <exec command="vendor\bin\drush -y updb" description="Run drupal update database hooks." logoutput="true"/>
@@ -36,7 +35,18 @@
     <phingcall target="clear"/>
   </target>
 
-  <!--  prod:pull -->
+  <!-- vendor\bin\phing push -D commit="backup and export configs" -->
+  <target name="push" depends="clear">
+    <exec command="vendor\bin\drush -y config-export" description="Export drupal configuration." logoutput="true"/>
+    <exec command="git add ." description="git add --all" logoutput="true"/>
+    <exec command='git commit -m "${commit}"' description='git commit -m "${commit}"' logoutput="true"/>
+    <exec command="git push" description="git push" logoutput="true"/>
+  </target>
+
+
+
+
+  <!-- vendor\bin\phing prod:pull -->
   <target name="prod:pull" depends="clear">
     <exec command="vendor\bin\drush -y config-export" description="Export drupal configuration." logoutput="true"/>
     <exec command="git add ." description="git add --all" logoutput="true"/>
@@ -49,20 +59,8 @@
     <phingcall target="clear"/>
   </target>
 
-  <!--  push for dev -->
-  <!-- vendor\bin\phing push -D commit="backup and export configs" -->
-  <target name="push" depends="clear">
-    <exec command="vendor\bin\drush -y config-export" description="Export drupal configuration." logoutput="true"/>
-    <exec command="git add ." description="git add --all" logoutput="true"/>
-    <exec command='git commit -m "${commit}"' description='git commit -m "${commit}"' logoutput="true"/>
-    <exec command="git push" description="git push" logoutput="true"/>
-  </target>
-
-
-  <!--  prod:push -->
   <!-- vendor\bin\phing prod:push -D commit="backup and export configs" -->
   <target name="prod:push" depends="clear">
-    <!--  backup database-->
     <phingcall target="backup"/>
     <exec command="vendor\bin\drush -y config-export" description="Export drupal configuration." logoutput="true"/>
     <exec command="git add ." description="git add --all" logoutput="true"/>
@@ -70,7 +68,7 @@
     <exec command="git push" description="git push" logoutput="true"/>
   </target>
 
-  <!--  backup database-->
+  <!--  vendor\bin\phing backup -->
   <target name="backup" depends="clear">
     <tstamp>
       <format property="DATE" pattern="%Y-%m-%d--%H-%M-%S"/>
@@ -82,7 +80,7 @@
   </target>
 
 
-  <!--  restore database -->
+  <!--  vendor\bin\phing restore  -->
   <target name="restore" depends="clear">
     <echo msg="Fetching backup files..."/>
     <exec command="ls private/backup -t1 | head -n1" outputProperty="backup.file"/>
