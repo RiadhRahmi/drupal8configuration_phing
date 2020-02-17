@@ -6,13 +6,13 @@
   <property name="URI.backup" value="${URI.base}/private/backup"/>
   <property name="commit" value="puch configuration" override="true"/>
 
-  <!--  Rebuild the cache-->
+  <!--  vendor\bin\phing  clear -->
   <target name="clear" description="Rebuild the cache">
     <echo msg='Rebuild the cache'/>
     <exec command="vendor\bin\drush cr" description="Rebuild the cache." logoutput="true"/>
   </target>
 
-  <!--  clone database and configuration -->
+  <!--  vendor\bin\phing clone -->
   <target name="clone" depends="clear">
     <phingcall target="restore"/>
     <exec command="vendor\bin\drush -y config-import" description="Import drupal configuration." logoutput="true"/>
@@ -21,7 +21,7 @@
     <phingcall target="clear"/>
   </target>
 
-  <!--  pull for dev -->
+  <!-- vendor\bin\phing pull -->
   <target name="pull" depends="clear">
     <exec command="vendor\bin\drush -y config-export" description="Export drupal configuration." logoutput="true"/>
     <exec command="git add ." description="git add --all" logoutput="true"/>
