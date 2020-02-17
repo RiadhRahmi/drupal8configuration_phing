@@ -1,33 +1,33 @@
-uuid: 6329f717-06a7-43bc-b04b-0f02450be130
+uuid: 3046cd8e-a6b0-4eef-a01e-dd21cfb7a4df
 langcode: en
-status: open
+status: closed
 dependencies:
   enforced:
     module:
-      - webform
+      - webform_templates
 _core:
-  default_config_hash: z-xqCZwXhZ-pXe52c0MCf7kYjLzvlLDyOusIt5u1C0g
+  default_config_hash: Hiwu5jFv4v_dFN4HuY3yeDNl_EeNwlhwIPcC9LKqiWA
 open: null
 close: null
 weight: 0
 uid: null
-template: false
+template: true
 archive: false
-id: contact
-title: Contact
-description: 'Basic email contact webform.'
+id: template_feedback
+title: Feedback
+description: 'A basic feedback template.'
 category: ''
-elements: "name:\n  '#title': 'Your Name'\n  '#type': textfield\n  '#required': true\n  '#default_value': '[current-user:display-name]'\nemail:\n  '#title': 'Your Email'\n  '#type': email\n  '#required': true\n  '#default_value': '[current-user:mail]'\nsubject:\n  '#title': Subject\n  '#type': textfield\n  '#required': true\n  '#test': 'Testing contact webform from [site:name]'\nmessage:\n  '#title': Message\n  '#type': textarea\n  '#required': true\n  '#test': 'Please ignore this email.'\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit__label': 'Send message'\n"
+elements: "type:\n  '#title': 'Type of Feedback'\n  '#type': webform_radios_other\n  '#required': true\n  '#options':\n    Comments: Comments\n    'Report a Bug': 'Report a Bug'\n    Questions: Questions\n  '#options_display': side_by_side\ncomments:\n  '#title': 'Your Feedback'\n  '#type': textarea\n  '#required': true\nname:\n  '#title': 'Your Name'\n  '#type': textfield\n  '#required': true\nemail:\n  '#title': 'Your Email'\n  '#type': email\n  '#required': true\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit__label': 'Submit feedback'\n"
 css: ''
 javascript: ''
 settings:
   ajax: false
-  ajax_scroll_top: ''
+  ajax_scroll_top: form
   ajax_progress_type: ''
   ajax_effect: ''
   ajax_speed: null
   page: true
-  page_submit_path: /contact
+  page_submit_path: ''
   page_confirm_path: ''
   page_admin_theme: false
   form_title: source_entity_webform
@@ -104,9 +104,9 @@ settings:
   draft_loaded_message: ''
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
-  confirmation_type: url_message
+  confirmation_type: page
   confirmation_title: ''
-  confirmation_message: 'Your message has been sent.'
+  confirmation_message: 'Thank you for your feedback.'
   confirmation_url: '<front>'
   confirmation_attributes: {  }
   confirmation_back: true
@@ -200,8 +200,8 @@ handlers:
       from_mail: _default
       from_options: {  }
       from_name: _default
-      subject: '[webform_submission:values:subject:raw]'
-      body: '[webform_submission:values:message:value]'
+      subject: _default
+      body: '[webform_submission:values:comments:value]'
       excluded_elements: {  }
       ignore_access: false
       exclude_empty: true
@@ -227,8 +227,23 @@ handlers:
     settings:
       states:
         - completed
-      to_mail: _default
-      to_options: {  }
+      to_mail: '[webform_submission:values:type:raw]'
+      to_options:
+        -
+          value: Comments
+          text: '[site:mail]'
+        -
+          value: 'Report a Bug'
+          text: '[site:mail]'
+        -
+          value: Questions
+          text: '[site:mail]'
+        -
+          value: _other_
+          text: '[site:mail]'
+        -
+          value: _default
+          text: '[site:mail]'
       cc_mail: ''
       cc_options: {  }
       bcc_mail: ''
@@ -236,8 +251,8 @@ handlers:
       from_mail: '[webform_submission:values:email:raw]'
       from_options: {  }
       from_name: '[webform_submission:values:name:raw]'
-      subject: '[webform_submission:values:subject:raw]'
-      body: '[webform_submission:values:message:value]'
+      subject: _default
+      body: '[webform_submission:values:comments:value]'
       excluded_elements: {  }
       ignore_access: false
       exclude_empty: true

@@ -1,33 +1,33 @@
-uuid: 6329f717-06a7-43bc-b04b-0f02450be130
+uuid: 455b5c0a-ac95-4222-887e-572c64c839ad
 langcode: en
-status: open
+status: closed
 dependencies:
   enforced:
     module:
-      - webform
+      - webform_templates
 _core:
-  default_config_hash: z-xqCZwXhZ-pXe52c0MCf7kYjLzvlLDyOusIt5u1C0g
+  default_config_hash: mPneOTc6QY2xBTqaIDsKT6Te4rwcZgFApPaDXkp44Pc
 open: null
 close: null
 weight: 0
 uid: null
-template: false
+template: true
 archive: false
-id: contact
-title: Contact
-description: 'Basic email contact webform.'
+id: template_contact
+title: 'Contact Us'
+description: 'A basic contact webform template.'
 category: ''
-elements: "name:\n  '#title': 'Your Name'\n  '#type': textfield\n  '#required': true\n  '#default_value': '[current-user:display-name]'\nemail:\n  '#title': 'Your Email'\n  '#type': email\n  '#required': true\n  '#default_value': '[current-user:mail]'\nsubject:\n  '#title': Subject\n  '#type': textfield\n  '#required': true\n  '#test': 'Testing contact webform from [site:name]'\nmessage:\n  '#title': Message\n  '#type': textarea\n  '#required': true\n  '#test': 'Please ignore this email.'\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit__label': 'Send message'\n"
+elements: "name:\n  '#title': 'Your Name'\n  '#type': textfield\n  '#required': true\nemail:\n  '#title': 'Your Email'\n  '#type': email\n  '#required': true\nsubject:\n  '#title': Subject\n  '#type': textfield\n  '#required': true\nmessage:\n  '#title': Message\n  '#type': textarea\n  '#required': true\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit__label': 'Send message'\n"
 css: ''
 javascript: ''
 settings:
   ajax: false
-  ajax_scroll_top: ''
+  ajax_scroll_top: form
   ajax_progress_type: ''
   ajax_effect: ''
   ajax_speed: null
   page: true
-  page_submit_path: /contact
+  page_submit_path: ''
   page_confirm_path: ''
   page_admin_theme: false
   form_title: source_entity_webform
