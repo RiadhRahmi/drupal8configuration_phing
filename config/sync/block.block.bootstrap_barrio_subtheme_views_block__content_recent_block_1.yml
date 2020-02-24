@@ -5,6 +5,7 @@ dependencies:
   config:
     - views.view.content_recent
   module:
+    - system
     - views
   theme:
     - bootstrap_barrio_subtheme
@@ -21,4 +22,9 @@ settings:
   label_display: visible
   views_label: ''
   items_per_page: none
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: /about
+    negate: true
+    context_mapping: {  }

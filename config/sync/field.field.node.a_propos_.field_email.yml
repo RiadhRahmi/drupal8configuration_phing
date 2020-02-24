@@ -1,0 +1,19 @@
+uuid: 8a30aaaa-68d5-4917-9c5f-a9df10b4db97
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_email
+    - node.type.a_propos_
+id: node.a_propos_.field_email
+field_name: field_email
+entity_type: node
+bundle: a_propos_
+label: Email
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

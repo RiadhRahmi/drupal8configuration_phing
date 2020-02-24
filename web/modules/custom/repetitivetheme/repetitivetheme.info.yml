@@ -1,0 +1,5 @@
+name: repetitivetheme
+type: module
+description: 'repetitive things in each theme'
+package: 'Custom'
+core: '8.x'
