@@ -1,0 +1,22 @@
+uuid: d5928077-c4bb-4084-89f5-9ca795eddd40
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.a_propos_
+id: node.a_propos_.promote
+field_name: promote
+entity_type: node
+bundle: a_propos_
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

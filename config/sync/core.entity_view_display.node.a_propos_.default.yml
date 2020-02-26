@@ -1,0 +1,47 @@
+uuid: d4f13984-7c57-4a91-ba9c-192e32cab47e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.a_propos_.body
+    - field.field.node.a_propos_.field_email
+    - field.field.node.a_propos_.field_image
+    - node.type.a_propos_
+  module:
+    - image
+    - text
+    - user
+id: node.a_propos_.default
+targetEntityType: node
+bundle: a_propos_
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_email:
+    weight: 103
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_image:
+    weight: 102
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

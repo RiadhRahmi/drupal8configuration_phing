@@ -1,0 +1,17 @@
+uuid: d8e20e6b-c7d8-49a0-8f52-b4d41187b5e2
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'a propos'
+type: a_propos_
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false
